@@ -15,7 +15,6 @@ bin
 build
 lib/
 target
-.factorypath
 .springBeans
 interpolated*.xml
 dependency-reduced-pom.xml
@@ -31,8 +30,6 @@ overridedb.*
 *.ipr
 *.iws
 .idea
-*.jar
 .DS_Store
-.factorypath
 dump.rdb
 transaction-logs
