@@ -46,19 +46,19 @@ public class ServiceApplication {
 	}
 
 	@RequestMapping("/service-instances/{applicationName}")
-	public List<ServiceInstance> serviceInstancesByApplicationName(@PathVariable String applicationName, HttpServletRequest request) {
+	public ServiceInstance serviceInstancesByApplicationName(@PathVariable String applicationName, HttpServletRequest request) {
 		this.log(request);
 
-		return this.discoveryClient.getInstances(applicationName);
+		return this.discoveryClient.getInstances(applicationName).get(0);
 	}
 
-	@RequestMapping(value = "/version")
+	@RequestMapping("/version")
 	@ApiVersion(to = "2.0.0")
 	public String v1() {
 		return "v1";
 	}
 
-	@RequestMapping(value = "/version")
+	@RequestMapping("/version")
 	@ApiVersion(from = "2.0.0", to = "3.0.0")
 	public String v2() {
 		return "v2";
